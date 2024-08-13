@@ -54,8 +54,8 @@ export const getMessages = async (req, res) => {
 
     if (!conversation) {
       return res
-        .status(401)
-        .json({ error: "conversation with this user doesnt exist" });
+        .status(200) // 200 status code because we are not sending an error because it is not an error if there is no conversation  (ie no messages)  between the 2 users yet
+        .json([]); // return an empty array if there is no conversation
     }
 
     const messages = conversation.messages;
