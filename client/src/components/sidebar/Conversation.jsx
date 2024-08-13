@@ -1,9 +1,12 @@
+import { useSocketContext } from "../../context/SocketContext";
 import useConversation from "../../zustand/useConversation";
 
 const Conversation = ({ conversation, emoji, lastIndx }) => {
   // this is a custom hook created using zustand, to create these global state values, alternative to useContext+provider etc...
   const { selectedConversation, setSelectedConversation } = useConversation();
   const isSelected = selectedConversation?._id === conversation._id;
+  const { onlineUsers } = useSocketContext();
+  const isOnline = onlineUsers.includes(conversation._id); // conversation._id is the id of the reciever user in the selected convo
   return (
     <>
       <div /* if conversation div is clicked/selected, div bg = blue */
@@ -12,7 +15,7 @@ const Conversation = ({ conversation, emoji, lastIndx }) => {
         `}
         onClick={() => setSelectedConversation(conversation)}
       >
-        <div className="avatar online">
+        <div className={`avatar ${isOnline ? "online" : ""}`}>
           <div className="w-12 rounded-full">
             <img src={conversation.profilePic} alt="user avatar"></img>
           </div>

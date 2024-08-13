@@ -1,5 +1,6 @@
 import Conversation from "../models/conversation.model.js";
 import Message from "../models/message.model.js";
+import { getRecieverSocketId, io } from "../socket/socket.js";
 
 export const sendMessage = async (req, res) => {
   try {
@@ -27,13 +28,18 @@ export const sendMessage = async (req, res) => {
       conversation.messages.push(newMessage._id); // add to the default empty 'messages' array on the conversation model schema
     }
 
-    //SOCKET IO FUNCTIONALITY WILL GO HERE
-
     // await conversation.save();
     // await newMessage.save();
 
     // The above 2 lines can be replaced by the following line (runs the 2 lines in parallel = quicker)
     await Promise.all([conversation.save(), newMessage.save()]);
+
+    //SOCKET IO FUNCTIONALITY WILL GO HERE
+    const recieverSocketId = getRecieverSocketId(recieverId);
+    if (recieverSocketId) {
+      // io.to(<socket_id>).emit() - method to only send an event to one specific client:
+      io.to(recieverSocketId).emit("newMessage", newMessage);
+    }
 
     res.status(201).json(newMessage);
   } catch (error) {
