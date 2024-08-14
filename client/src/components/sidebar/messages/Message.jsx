@@ -18,13 +18,13 @@ const Message = ({ message }) => {
   return (
     <div className={`chat ${chatClassName}`}>
       <div className="chat-image avatar">
-        <div className="w-10 rounded-full">
+        <div className="pfp-2 w-10 rounded-full">
           <img src={profilePic} alt="chat bubble user icon"></img>
         </div>
       </div>
 
       <div
-        className={`chat-bubble text-white ${bubbleBgColor} ${shakeClass} pb-2`}
+        className={`msg-bubble chat-bubble text-white ${bubbleBgColor} ${shakeClass} pb-2`}
       >
         {message.message}
       </div>

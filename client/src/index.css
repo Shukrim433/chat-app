@@ -66,3 +66,24 @@
     transform: translate3d(4px, 0, 0);
   }
 }
+
+/* login page styling */
+.login {
+  background-color: #00000080;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.signup{
+  background-color: #00000080;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* shadows on random elements */
+.pfp{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+}
+.pfp-2{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+}

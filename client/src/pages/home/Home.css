@@ -30,5 +30,7 @@
 
   .msg-header .arrow-btn {
     display: block;
+    font-size: larger;
+    color: black;
   }
 }
