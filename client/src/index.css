@@ -2,12 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+} */
+
+/* make elements with this "hide" class name display-none ONLY WHEN
+ the screen is 900px and below */
+@media (max-width: 900px) {
+  .hide {
+    display: none;
+  }
 }
 
 /* dark mode looking scrollbar */ /* NOT WORKING */

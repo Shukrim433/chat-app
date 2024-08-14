@@ -1,9 +1,10 @@
 import MessageContainer from "../../components/sidebar/messages/MessageContainer";
 import Sidebar from "../../components/sidebar/Sidebar";
+import "./Home.css"
 
 const Home = () => {
   return (
-  <div className="flex sm:h-[450px] md:h-[550px] rounded-lg overflow-hidden bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
+  <div className="home-page flex h-screen w-screen">
     <Sidebar/>
     <MessageContainer/>
   </div> 
@@ -11,3 +12,5 @@ const Home = () => {
 };
 
 export default Home;
+
+// after flex min-w-[100vw]

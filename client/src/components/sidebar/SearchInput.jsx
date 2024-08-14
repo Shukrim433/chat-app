@@ -3,11 +3,13 @@ import { IoSearchSharp } from "react-icons/io5";
 import useConversation from "../../zustand/useConversation";
 import useGetConversations from "../../hooks/useGetConversations";
 import toast from "react-hot-toast";
+import { useAppContext } from "../../context/AppContext";
 
 const SearchInput = () => {
   const [search, setSearch] = useState("");
   const { setSelectedConversation } = useConversation();
   const { conversations } = useGetConversations();
+  const { chatVisible, setChatVisible } = useAppContext();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -27,6 +29,7 @@ const SearchInput = () => {
 
     if (searchedConversation) {
       setSelectedConversation(searchedConversation);
+      setChatVisible(true); // hide side bar when you search for a convo, + show selected/searched convo messages
       setSearch(""); // clear search input field after submit
     } else toast.error("no such user found");
   };
@@ -35,7 +38,7 @@ const SearchInput = () => {
       <input
         type="text"
         placeholder="Search..."
-        className="input input-bordered rounded-full"
+        className="w-full input input-bordered rounded-full"
         value={search}
         onChange={(event) => {
           setSearch(event.target.value);

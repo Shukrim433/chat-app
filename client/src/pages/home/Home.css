@@ -1,0 +1,34 @@
+.side-bar {
+  width: 33.33%;
+}
+.msg-container {
+  width: 66.66%;
+}
+
+.msg-header .arrow-btn {
+    display: none;
+}
+
+
+@media (max-width: 900px) {
+  .msg-container {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .side-bar {
+    width: 100%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .msg-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .msg-header .arrow-btn {
+    display: block;
+  }
+}
