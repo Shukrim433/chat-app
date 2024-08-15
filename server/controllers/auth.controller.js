@@ -22,6 +22,7 @@ export const signup = async (req, res) => {
 
     const boyProfilePic = `https://avatar.iran.liara.run/public/boy?username=${username}`;
     const girlProfilePic = `https://avatar.iran.liara.run/public/girl?username=${username}`;
+    /* const fallBack = `https://ui-avatars.com/api/?background=0D8ABC&color=fff` */
 
     const newUser = new User({
       fullName,
