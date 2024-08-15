@@ -19,7 +19,7 @@ export const SocketContextProvider = ({ children }) => {
   useEffect(() => {
     // 1
     if (authUser) {
-      const socket = io("http://localhost:5000", {
+      const socket = io("https://chat-app-1jfo.onrender.com", {
         query: {
           userId: authUser._id, // sending logged in user's id to the backend
         },
