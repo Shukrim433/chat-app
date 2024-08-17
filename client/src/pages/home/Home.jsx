@@ -4,7 +4,7 @@ import "./Home.css"
 
 const Home = () => {
   return (
-  <div className="home-page flex h-screen w-screen">
+  <div className="home-page flex h-screen ">
     <Sidebar/>
     <MessageContainer/>
   </div> 

@@ -1,3 +1,6 @@
+.home-page {
+  width: 80%;
+}
 .side-bar {
   width: 33.33%;
 }
@@ -11,6 +14,9 @@
 
 
 @media (max-width: 900px) {
+  .home-page {
+    width: 100%;
+  }
   .msg-container {
     width: 100%;
     border-top-left-radius: 5px;

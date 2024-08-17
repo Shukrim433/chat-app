@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { AuthContextProvider } from "./context/authContext.jsx";
 import { SocketContextProvider } from "./context/SocketContext.jsx";
 import { AppContextProvider } from "./context/AppContext.jsx";
+import Header from "./components/header/Header.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <AuthContextProvider>
         <SocketContextProvider>
           <AppContextProvider>
+            <Header/>
             <App />
           </AppContextProvider>
         </SocketContextProvider>
