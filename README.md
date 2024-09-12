@@ -24,6 +24,7 @@ I started this project to practice my MongoDB, Express.js, React and Node.js ski
 - Search for user or select user to chat with from side bar.
 - Use input area and send icon to write message to send to user.
 - Notification bell will ring after a you recieve messages from the user you are chatting with. (No need to refresh the page to get new messages, socket.IO will handle that)
+- Also logged in users have a green circle on their icon to indicate that they're online (also done using socket.IO)
 - Logout when you want.
 
 ## Credits
