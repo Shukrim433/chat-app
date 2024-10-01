@@ -50,7 +50,7 @@ const useSignup = () => {
       // save created user in context
       setAuthUser(data);
 
-      console.log("user created in backend:", data);
+      /* console.log("user created in backend:", data); */
     } catch (error) {
       toast.error(error.message);
     } finally {

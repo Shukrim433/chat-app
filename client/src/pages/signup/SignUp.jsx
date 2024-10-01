@@ -21,7 +21,7 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("signup form inputs", inputs);
+    /* console.log("signup form inputs", inputs); */
     await signup(inputs);
   };
   return (

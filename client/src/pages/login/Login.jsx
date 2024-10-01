@@ -10,7 +10,7 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("login form inputs", username, password);
+    /* console.log("login form inputs", username, password); */
     await login(username, password);
   };
 
